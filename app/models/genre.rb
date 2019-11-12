@@ -11,6 +11,16 @@ class Genre < ActiveRecord::Base
   end
 
   def all_artist_names
-    self.artists.select('name')
+   # x = 1
+   # array = []
+   # while x <= artist_count
+   #   array << self.artists.find(x).name
+   #   x += 1
+  #  end
+   # array
+   self.artists.map do |artist|
+     artist.name
+   end
   end
+  
 end
